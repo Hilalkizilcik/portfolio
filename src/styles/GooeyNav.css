@@ -1,0 +1,87 @@
+.gooey-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 50;
+  backdrop-filter: blur(5px); /* menü arkasını blur yapar */
+  font-size: 20px;
+}
+
+/* Menü linkleri */
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none; /* normalde altı çizgi yok */
+  transition: all 0.2s ease;
+}
+
+.menu li a:hover {
+  color: #8121F9;
+  text-decoration: underline;
+  text-underline-offset: 4px; 
+  text-decoration-thickness: 3px; 
+}
+
+/* Hamburger (mobil) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  z-index: 60; /* menünün üzerinde olsun */
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #8121F9;
+  transition: 0.3s;
+}
+
+/* Mobil görünüm */
+@media (max-width: 768px) {
+  .hamburger {
+    top: 15px;
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;  /* fixed yaparak her zaman görünür */
+    top: 60px;        /* navbar altından başlasın */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* blurlu arka plan */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    border-radius: 12px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .menu.open {
+    max-height: 400px;
+    padding: 1rem 0;
+  }
+
+  .menu li {
+    margin: 0.5rem 0;
+  }
+}

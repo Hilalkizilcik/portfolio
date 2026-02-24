@@ -1,0 +1,53 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 2rem 0;
+  background: #060010;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Orb dışarı taşmasın */
+}
+
+.footer-orb {
+  position: absolute;
+  inset: 0; /* tüm footer alanını kaplasın */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: blur(80px); /* blur efekti */
+  z-index: 0; /* en arkada */
+  pointer-events: none; /* tıklamaları engellemesin */
+}
+
+.footer-icons,
+.footer-text {
+  position: relative;
+  z-index: 2; /* içerik üstte */
+}
+
+.footer-icons {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.8rem;
+}
+
+.footer-icons a {
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-icons a:hover {
+  color: #8323ff;
+  transform: scale(1.2);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
