@@ -8,6 +8,13 @@ import GooeyNav from "./components/GooeyNav";
 import Footer from "./components/Footer";
 import Orb from "./components/Orb";
 
+// Görselleri import ettik
+import meImg from "./assets/img/me1.jpeg";
+import mailImg from "./assets/img/mail.png";
+import utopiaImg from "./assets/img/utopia-fitness.png";
+import adimPatentImg from "./assets/img/adim-patent.png";
+import homeArtPlusImg from "./assets/img/home-art-plus.png";
+
 function App() {
   return (
     <div
@@ -74,14 +81,17 @@ function App() {
               modern and user-friendly interfaces. I build projects using HTML,
               CSS, JavaScript, and React.js.
             </p>
-            <a href="https://www.linkedin.com/in/hilalkizilcik/" className="contact-btn">
+            <a
+              href="https://www.linkedin.com/in/hilalkizilcik/"
+              className="contact-btn"
+            >
               Contact Me
             </a>
           </div>
 
           {/* Sağ taraf - Fotoğraf */}
           <div className="about-photo">
-            <img src="src/assets/img/me1.jpeg" alt="Hilal Kızılcık" />
+            <img src={meImg} alt="Hilal Kızılcık" />
           </div>
         </div>
       </div>
@@ -146,6 +156,7 @@ function App() {
           ))}
         </div>
       </div>
+
       {/* Projelerim Bölümü */}
       <div className="projects-section">
         <div className="projects-title">
@@ -164,21 +175,21 @@ function App() {
               title: "Utopia Fitness",
               desc: "A responsive corporate website developed for a fitness brand, focusing on modern UI and user experience.",
               tech: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP"],
-              img: "src/assets/img/utopia-fitness.png",
+              img: utopiaImg,
               link: "https://utopiafitness.com.tr/",
             },
             {
               title: "Adım Patent",
               desc: "A modern and professional corporate website designed to represent a patent consultancy brand.",
               tech: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-              img: "src/assets/img/adim-patent.png",
+              img: adimPatentImg,
               link: "https://adimpatent.com.tr/tr",
             },
             {
               title: "Home Art Plus",
               desc: "A responsive e-commerce website developed for a home decor brand, focusing on modern UI and user experience.",
               tech: ["WordPress", "Flatsome"],
-              img: "src/assets/img/home-art-plus.png",
+              img: homeArtPlusImg,
               link: "https://www.homeartplustr.com/",
             },
           ].map((proj, i) => (
@@ -204,6 +215,7 @@ function App() {
           ))}
         </div>
       </div>
+
       {/* İletişim Bölümü */}
       <div className="contact-section">
         <div className="contact-grid">
@@ -220,7 +232,7 @@ function App() {
 
           {/* Sağ taraf - Görsel */}
           <div className="contact-image">
-            <img src="src/assets/img/mail.png" alt="İletişim Görseli" />
+            <img src={mailImg} alt="İletişim Görseli" />
           </div>
         </div>
       </div>
